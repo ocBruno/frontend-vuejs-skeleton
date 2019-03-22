@@ -1,7 +1,7 @@
 <template>
     <div id="NavBar">
          <b-navbar toggleable="lg" type="dark" variant="dark">
-        <b-navbar-brand href="#">NavBar</b-navbar-brand>
+        <b-navbar-brand href="#">The<em>Loop</em></b-navbar-brand>
 
         <b-navbar-toggle target="nav_collapse" />
 
@@ -59,7 +59,7 @@ export default {
 <style lang="scss" >
 
 #routes {
-  text-shadow: 1px 1px 3px rgb(24, 24, 24);
+  // text-shadow: 1px 1px 1px rgb(24, 24, 24);
 
 }
 

@@ -1,9 +1,20 @@
 <template>
-    <div id="LocalWeather">
-        <p>Local weather</p>
-        <h1>{{this.currentTemp}}</h1>
 
-    </div>
+        <b-col  class="w-25 ">
+
+                <h5 class="pt-2">Local weather</h5>
+                <img class="pb-2" :src="this.icon" alt="">
+                <b-row class="justify-content-center">
+                <h5 >C</h5>
+                <h1>{{this.tempC}}</h1>
+                </b-row>
+                <b-row class="justify-content-center">
+                <h5>F</h5>
+                <h1>{{this.tempF}}</h1>
+                </b-row>
+
+        </b-col>
+
 </template>
 <script>
 import Vue from "vue";
@@ -15,7 +26,8 @@ export default {
             "currentTemp": null,
             "url": null,
             "tempF": null,
-            "tempC": null
+            "tempC": null,
+            "icon": null
         }
 
     },
@@ -25,21 +37,22 @@ export default {
                     Vue.axios.get(url)
                     .then((res) => {
                             
-                        console.log("entered function");
+                        
 
-                        console.log(res.data);
+                        // console.log(res.data);
 
                         this.tempF = res.data.current.temp_f;
                         
                         this.tempC = res.data.current.temp_c;
+                        this.icon = res.data.current.condition.icon;
 
                         let locationName = res.data.location.name;
-                        // console.log(tempF);
+
                         if (res.data.current.is_day == 0) {
 
                             let color = "darkblue";
                             let conditionText = res.data.current.condition.text
-                            this.currentTemp = res.data.current.temp_c;
+                           
                         }
                      })
             }
@@ -66,8 +79,7 @@ export default {
              this.getWeather(url);
          });
         
-        // this.url = url;
-        // console.log(this.url);
+
         
     }
 }
