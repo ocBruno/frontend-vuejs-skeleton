@@ -1,19 +1,25 @@
 <template>
 
-        <b-col  class="w-25 ">
+    <b-row class="mt-2 col-4 justify-content-center">
+        <b-col  class="col-md-3">
 
-                <h5 class="pt-2">Local weather</h5>
-                <img class="pb-2" :src="this.icon" alt="">
-                <b-row class="justify-content-center">
-                <h5 >C</h5>
-                <h1>{{this.tempC}}</h1>
-                </b-row>
-                <b-row class="justify-content-center">
-                <h5>F</h5>
-                <h1>{{this.tempF}}</h1>
-                </b-row>
-
+                <img class="pb-2 pt-2 " :src="this.icon" alt="">
         </b-col>
+        <b-col  class="ml-3 col-md-3 align-self-end">
+                <b-row class="flex justify-content-center ">
+                <span class="h5">C</span>
+                <span class="h1">{{this.tempC}}</span>
+                </b-row>
+                
+        </b-col>
+        <b-col  class="ml-3 col-md-3 align-self-end">
+                <b-row class="justify-content-center">
+                <span class="h5">F</span>
+                <span class="h1">{{this.tempF}}</span>
+                </b-row>
+        </b-col>
+</b-row>
+     
 
 </template>
 <script>

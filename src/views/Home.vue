@@ -1,9 +1,11 @@
 <template>
   <div class="home">
-    <b-row class="mt-2">
+    <b-row>
     <LocalWeather />
+    <BuzzFeedWidget />
+    </b-row>
     <NewsWidget /> 
-  </b-row>
+
   </div>
 </template>
 
@@ -11,12 +13,14 @@
 // @ is an alias to /src
 import LocalWeather from "@/components/LocalWeather.vue";
 import NewsWidget from "@/components/NewsWidget.vue";
+import BuzzFeedWidget from "@/components/BuzzFeedWidget.vue";
 
 export default {
   name: "home",
   components: {
     LocalWeather,
     NewsWidget,
+    BuzzFeedWidget
   }
 };
 </script>
